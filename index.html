@@ -1,11 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Exercise 2</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <style>
+      button {
+         width: 50px;
+         height: 50px;
+      }
+   </style>
 </head>
-<body>
-    <center>
-        <h1>Kalkulator</h1>
-    </center>
+
+<body class="text-white" style="background-color:snow">
+
+   <div class="container my-5 border border-secondary text-center rounded-lg shadow"
+      style="width: 30%; background-color: black">
+      <h1>Simple Calculator</h1>
+      <form id="kalkulator">
+         <div class="form-group">
+            <label for="nilaiSatu"> Value 1: </label>
+            <input class="form-control" type="text" id="nilaiSatu">
+            <br><br>
+            <label for="nilaiDua"> Value 2:</label>
+            <input class="form-control" type="text" id="nilaiDua">
+         </div>
+      </form>
+
+      <div>
+         <button class="btn btn-primary" onclick="kali()">
+            <p>&#215;</p>
+         </button>
+         <button class="btn btn-primary" onclick="bagi()">
+            <p>&#247;</p>
+         </button>
+         <button class="btn btn-primary" onclick="tambah()">
+            <p>&#43;</p>
+         </button>
+         <button class="btn btn-primary" onclick="kurang()">
+            <p>&#8722;</p>
+         </button>
+         <button class="btn btn-primary" onclick="mod()">
+            <p>&#37;</p>
+         </button>
+         <button class="btn btn-primary" onclick="pangkat()">
+            <p>&#215;<sup>2</sup></p>
+         </button>
+         <button class="btn btn-primary" onclick="akar()">
+            <p>&#8730;</p>
+         </button>
+      </div>
+
+      <div class="text-center mt-5" style="background-color:darkgreen">
+         <p id="hasilCal">Input Number First</p>
+      </div>
+
+   </div>
+
+   <script>
+      var kali = () => {
+         var nilaiSatu = parseInt(document.getElementById("nilaiSatu").value)
+         var nilaiDua = parseInt(document.getElementById("nilaiDua").value)
+
+         var resX = nilaiSatu * nilaiDua
+         var hasilCal = document.getElementById("hasilCal")
+         hasilCal.innerHTML = `${nilaiSatu} &#215; ${nilaiDua} = ${resX}`
+      }
+
+      var bagi = () => {
+         var nilaiSatu = parseInt(document.getElementById("nilaiSatu").value)
+         var nilaiDua = parseInt(document.getElementById("nilaiDua").value)
+
+         var resBagi = nilaiSatu / nilaiDua
+         var hasilCal = document.getElementById("hasilCal")
+         hasilCal.innerHTML = `${nilaiSatu} &#247; ${nilaiDua} = ${resBagi}`
+      }
+
+      var tambah = () => {
+         var nilaiSatu = parseInt(document.getElementById("nilaiSatu").value)
+         var nilaiDua = parseInt(document.getElementById("nilaiDua").value)
+
+         var resTambah = nilaiSatu + nilaiDua
+         var hasilCal = document.getElementById("hasilCal")
+         hasilCal.innerHTML = `${nilaiSatu} &#43; ${nilaiDua} = ${resTambah}`
+      }
+
+      var kurang = () => {
+         var nilaiSatu = parseInt(document.getElementById("nilaiSatu").value)
+         var nilaiDua = parseInt(document.getElementById("nilaiDua").value)
+
+         var resKurang = nilaiSatu - nilaiDua
+         var hasilCal = document.getElementById("hasilCal")
+         hasilCal.innerHTML = `${nilaiSatu} &#8722; ${nilaiDua} = ${resKurang}`
+      }
+
+      var mod = () => {
+         var nilaiSatu = Number(document.getElementById("nilaiSatu").value)
+         var nilaiDua = Number(document.getElementById("nilaiDua").value)
+
+         var resMod = nilaiSatu % nilaiDua
+         var hasilCal = document.getElementById("hasilCal")
+         hasilCal.innerHTML = `${nilaiSatu} &#37; ${nilaiDua} = ${resMod}`
+      }
+
+      var pangkat = () => {
+         var nilaiSatu = parseInt(document.getElementById("nilaiSatu").value)
+         var nilaiDua = parseInt(document.getElementById("nilaiDua").value)
+
+         var resPangkat = Math.pow(nilaiSatu, nilaiDua)
+         var hasilCal = document.getElementById("hasilCal")
+         hasilCal.innerHTML = `${nilaiSatu}<sup>${nilaiDua}</sup> = ${resPangkat}`
+      }
+
+      var akar = () => {
+         var nilaiSatu = parseInt(document.getElementById("nilaiSatu").value)
+         var nilaiDua = parseInt(document.getElementById("nilaiDua").value)
+
+         var resAkar = Math.sqrt(nilaiSatu, nilaiDua)
+         var hasilAkar = document.getElementById("hasilAkar")
+         hasilCal.innerHTML = `${nilaiSatu} &#8730; ${nilaiDua} = ${resAkar}`
+      }
+   </script>
+    
+    
+    
+    
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+
 </body>
+
 </html>
